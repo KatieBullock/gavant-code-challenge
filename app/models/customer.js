@@ -8,9 +8,9 @@ export default Model.extend({
   phoneNumber: attr("string"),
   company: attr("string"),
   project: attr("string"),
-  budget: attr("string"),
+  budget: attr("number"),
 
   get fullName() {
-    return `${this.firstName} ${this.lastName}`;
+    return `${this.lastName}, ${this.firstName} `;
   },
 });

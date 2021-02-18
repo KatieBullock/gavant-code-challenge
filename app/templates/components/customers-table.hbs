@@ -1,26 +1,8 @@
 <LightTable @table={{this.table}} @responsive={{true}} @tableClassNames="table table-hover table-clickable-rows mb-0" as
   |Table|>
   <Table.head @sortOnClick={{false}} @multiColumnSort={{false}} @renderInPlace={{true}} @fixed={{false}}>
-    {{!-- What I added to populate the page --}}
-    {{!-- <tr>
-      {{#each columns as |column|}}
-      <th>{{column.label}}</th>
-      {{/each}}
-    </tr> --}}
   </Table.head>
   <Table.body @canSelect={{false}} @canExpand={{false}} @onRowClick={{action "onRowClick" }} as |Body|>
-    {{!-- What I added to populate the page --}}
-    {{!-- {{#each model as |customer|}}
-    <tr>
-      {{#each columns as |column|}}
-      <td>
-        <LinkTo @route="customers.customer" @model={{customer.id}}>
-          {{get customer column.valuePath}}
-        </LinkTo>
-      </td>
-      {{/each}}
-    </tr>
-    {{/each}} --}}
     {{#if this.table.isEmpty}}
     <Body.no-data>No results found</Body.no-data>
     {{/if}}
