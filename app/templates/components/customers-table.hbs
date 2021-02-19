@@ -4,7 +4,7 @@
   </Table.head>
   <Table.body @canSelect={{false}} @canExpand={{false}} @onRowClick={{action "onRowClick" }} as |Body|>
     {{#if this.table.isEmpty}}
-    <Body.no-data>No results found</Body.no-data>
+      <Body.no-data>No results found</Body.no-data>
     {{/if}}
   </Table.body>
 </LightTable>
