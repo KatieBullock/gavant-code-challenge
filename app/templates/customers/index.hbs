@@ -15,6 +15,7 @@
       </select>
     </div>
   </div>
+  <ListFilter @filter={{action "filterByCompany" }} />
   <div class="card">
     <CustomersTable @model={{this.sortedCustomers}} />
   </div>

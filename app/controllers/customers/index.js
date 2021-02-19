@@ -11,4 +11,14 @@ export default Controller.extend({
   }),
 
   sortedCustomers: sort("model", "customersSortProps"),
+
+  actions: {
+    filterByCompany(param) {
+      if (param !== "") {
+        return this.store.query("customer", { company: param });
+      } else {
+        return this.store.findAll("customer");
+      }
+    },
+  },
 });
