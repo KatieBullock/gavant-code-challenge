@@ -10,8 +10,10 @@ export default Controller.extend({
     return [this.sortProperty];
   }),
 
+  // Unable to figure out how to sort by descending for the budget
   sortedCustomers: sort("model", "customersSortProps"),
 
+  //Filter is attached to the list-filter component in the customers/index.hbs template. If the value of the user's input is equal to the company parameter, then it will return the results containing that company from the api. I failed to figure out how to link it to the results of the event handler
   actions: {
     filterByCompany(param) {
       if (param !== "") {

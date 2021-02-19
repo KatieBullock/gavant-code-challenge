@@ -1,5 +1,6 @@
 <Page::Header @title="Dashboard" />
 <Page::Content>
+  {{!-- This is telling the components that they should be using the dashboard's model --}}
   <GlanceWidget @model={{this.model}} />
   <ProspectsWidget @model={{this.model}} />
 </Page::Content>

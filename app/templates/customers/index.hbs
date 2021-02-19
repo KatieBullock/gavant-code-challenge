@@ -9,12 +9,14 @@
         <option value="sortedFullName" selected={{eq this.sortProperty "fullName" }}>
           Sort by name
         </option>
+        {{!-- Added budget sorting option --}}
         <option value="budget" selected={{eq this.sortProperty "budget" }}>
           Sort by budget
         </option>
       </select>
     </div>
   </div>
+  {{!-- This is the broken search box filter --}}
   <ListFilter @filter={{action "filterByCompany" }} />
   <div class="card">
     <CustomersTable @model={{this.sortedCustomers}} />

@@ -1,8 +1,17 @@
-<LightTable @table={{this.table}} @responsive={{true}} @tableClassNames="table table-hover table-clickable-rows mb-0" as
-  |Table|>
-  <Table.head @sortOnClick={{false}} @multiColumnSort={{false}} @renderInPlace={{true}} @fixed={{false}}>
+<LightTable
+@table={{this.table}}
+@responsive={{true}}
+@tableClassNames="table table-hover table-clickable-rows mb-0" as |Table|>
+  <Table.head
+  @sortOnClick={{false}}
+  @multiColumnSort={{false}}
+  @renderInPlace={{true}}
+  @fixed={{false}}>
   </Table.head>
-  <Table.body @canSelect={{false}} @canExpand={{false}} @onRowClick={{action "onRowClick" }} as |Body|>
+  <Table.body
+  @canSelect={{false}}
+  @canExpand={{false}}
+  @onRowClick={{action "onRowClick" }} as |Body|>
     {{#if this.table.isEmpty}}
       <Body.no-data>No results found</Body.no-data>
     {{/if}}
