@@ -6,7 +6,7 @@
     </h5>
     <div>
       <select class="form-control" onchange={{action (mut this.sortProperty) value="target.value" }}>
-        <option value="fullName" selected={{eq this.sortProperty "fullName" }}>
+        <option value="sortedFullName" selected={{eq this.sortProperty "fullName" }}>
           Sort by name
         </option>
         <option value="budget" selected={{eq this.sortProperty "budget" }}>

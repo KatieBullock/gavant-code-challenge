@@ -10,7 +10,11 @@ export default Model.extend({
   project: attr("string"),
   budget: attr("number"),
 
-  get fullName() {
+  get sortedFullName() {
     return `${this.lastName}, ${this.firstName} `;
+  },
+
+  get fullName() {
+    return `${this.firstName} ${this.lastName} `;
   },
 });

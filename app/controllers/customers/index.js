@@ -4,7 +4,7 @@ import { sort } from "@ember/object/computed";
 
 export default Controller.extend({
   //This receives the results from routes/customers/index.js as []
-  sortProperty: "fullName",
+  sortProperty: "sortedFullName",
 
   customersSortProps: computed("sortProperty", function () {
     return [this.sortProperty];
