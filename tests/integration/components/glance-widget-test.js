@@ -1,26 +1,15 @@
-import { module, test } from 'qunit';
-import { setupRenderingTest } from 'ember-qunit';
-import { render } from '@ember/test-helpers';
-import hbs from 'htmlbars-inline-precompile';
+import { module, test } from "qunit";
+import { setupRenderingTest } from "ember-qunit";
+import { render } from "@ember/test-helpers";
+import hbs from "htmlbars-inline-precompile";
 
-module('Integration | Component | glance-widget', function(hooks) {
+module("Integration | Component | glance-widget", function (hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
-
+  test("it renders a widget", async function (assert) {
     await render(hbs`<GlanceWidget />`);
 
-    assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      <GlanceWidget>
-        template block text
-      </GlanceWidget>
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.dom("h5").containsText("At a Glance");
+    assert.dom("p.text-muted").containsText("Customers in pipeline");
   });
 });

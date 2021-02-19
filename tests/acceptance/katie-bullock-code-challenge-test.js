@@ -17,4 +17,47 @@ module("Acceptance | katie bullock code challenge", function (hooks) {
 
     assert.equal(currentURL(), "/customers/3");
   });
+
+  test("viewing the details of a customer", async function (assert) {
+    await visit("/");
+    assert.dom(".customers-table").exists;
+
+    await click(".lt-row");
+    assert.equal(currentURL(), "/customers/3");
+  });
+
+  test("visting the customer information page", async function (assert) {
+    await visit("/customers/3");
+    assert.dom("h5").containsText("Customer Information");
+    assert.dom("form").exists;
+
+    await click(".btn");
+    assert.equal(currentURL(), "/customers");
+  });
+
+  test("visiting /dashboard", async function (assert) {
+    await visit("/dashboard");
+
+    assert.equal(currentURL(), "/dashboard");
+    assert.dom("nav").exists();
+
+    await click("a");
+
+    assert.equal(currentURL(), "/customers");
+  });
+
+  test("navigating using the nav-bar", async function (assert) {
+    await visit("/customers");
+
+    assert.dom("nav").exists();
+    assert.dom("nav a.navbar-brand").hasText("📈 GavantCRM");
+    assert.dom("nav a.customers-link").hasText("Customers");
+    assert.dom("nav a.dashboard-link").hasText("Dashboard");
+
+    await click("nav a.customers-link");
+    assert.equal(currentURL(), "/customers");
+
+    await click("nav a.dashboard-link");
+    assert.equal(currentURL(), "/dashboard");
+  });
 });

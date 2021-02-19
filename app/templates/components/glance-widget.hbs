@@ -15,9 +15,9 @@
         {{!-- This is looping through each model, to access the attributes. I couldn't figure out how to add up the
         budgets to get total budget --}}
         {{#each model as |customer|}}
-        <h5>
-          {{customer.budget}}
-        </h5>
+          <h5>
+            {{customer.budget}}
+          </h5>
         {{/each}}
         <h5>{{this.totalBudget}}</h5>
         <p class="text-muted">
